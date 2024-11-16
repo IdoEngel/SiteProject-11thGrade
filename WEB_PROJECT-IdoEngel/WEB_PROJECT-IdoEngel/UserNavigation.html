@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
 
-    <title>Home Page</title>
+    <title>Log In Page</title>
     <style>
         form {
             text-align: center;
@@ -53,6 +53,30 @@
             border-radius: 12px;
         }
 
+
+        .image-container {
+            width: 21px;
+            position: absolute;
+            bottom: -200px; /* Start below the screen */
+            left: 10%; /* Center horizontally */
+            transform: translateX(-50%);
+            animation: flowUp 15s linear infinite; /* Animate the upward flow */
+            z-index: -1; /* Place it behind other content */
+            overflow: hidden; /* Ensure images don't spill over */
+        }
+
+            
+
+        @keyframes flowUp {
+            0% {
+                bottom: -50px; /* Start at the bottom of the screen */
+            }
+
+            100% {
+                bottom: 110vh; /* End above the screen */
+            }
+        }
+
     </style>
 
 </head>
@@ -62,7 +86,7 @@
     <p>To use our website - you need to create an acount or log in to an existing one</p>
     <h3 style="text-align: center;" class=""> New Here?</h3>
 
-    <form action="/" id="SignUpForn">
+    <form action="Home.html" id="SignUpForn">
         <label for="name"> Full Name</label>
         <input type="text" pattern="[a-zA-Z]{3,} [a-zA-Z]{3,}" required
                title="Two names, 3 lettters for each at least" /> <br />
@@ -79,8 +103,9 @@
     </form>
 
 
+
     <h3 style="text-align: center;"> Have an Account?</h3>
-    <form action="/" id="LogInForn">
+    <form action="Home.html" id="LogInForn">
 
         <label for="email">  Email  </label>
         <input type="email" pattern="[a-z0-9]{3,}@[a-z]{2,}\.[a-z]{2,}" required
@@ -92,5 +117,24 @@
 
         <button class="button" type="submit">What are my tasks?</button>
     </form>
+    
+
+    <script>
+    const imageSources = ["imgs/to-do-list.png", "imgs/to-do-list (1).png", "imgs/to-do-list (2).png", "imgs/checklist.png", "imgs/to-do-list.png"];
+    const numberOfImages = 7; // Number of images to create
+
+    for (let i = 0; i < numberOfImages; i++) {
+      const img = document.createElement("img");
+      img.src = imageSources[Math.floor(Math.random() * imageSources.length)]; // Random image source
+      img.className = "image-container";
+
+      // Set random horizontal position and animation delay
+      img.style.left = Math.random() * 90 + "%"; // Random position between 0% and 90%
+      img.style.animationDelay = Math.random() * 5 + "s"; // Random delay between 0s and 5s
+      img.style.animationDuration = Math.random() * 3 + 4 + "s"; // Random speed between 4s and 7s
+
+      document.body.appendChild(img);
+    }</script>
+
 </body>
 </html>

@@ -67,7 +67,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Home.html" />
     <Content Include="imgs\backgroundImage.png" />
+    <Content Include="imgs\checklist.png" />
+    <Content Include="imgs\image.png" />
+    <Content Include="imgs\to-do-list %281%29.png" />
+    <Content Include="imgs\to-do-list %282%29.png" />
+    <Content Include="imgs\to-do-list.png" />
+    <Content Include="MainStyle.css" />
     <Content Include="UserNavigation.html" />
     <Content Include="Web.config" />
   </ItemGroup>
