@@ -29,13 +29,28 @@
         }
 
         body {
-            background-image: url('imgs/userNaviBack.png'); /* Path to your image */
+            background-image: url('imgs/backgroundImage.png'); /* Path to your image */
             
+            text-align: center;
+            color: black;
             background-size: cover; /* Make sure the image covers the entire page */
             background-position: center; /* Center the image */
             background-repeat: no-repeat; /* Prevent the image from repeating */
             height: 100vh; /* Ensure the body takes up the full height of the viewport */
             font-family: 'Times New Roman', Times, serif;
+        }
+
+
+        .button {
+            background-color: lightgray;
+            border: none;
+            color: black;
+            padding: 7px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 12px;
         }
 
     </style>
@@ -44,7 +59,7 @@
 
 <body>
     <h1 style="font-weight: bolder; text-align:center;"> To Start - Log In or Sign Up</h1>
-
+    <p>To use our website - you need to create an acount or log in to an existing one</p>
     <h3 style="text-align: center;" class=""> New Here?</h3>
 
     <form action="/" id="SignUpForn">
@@ -60,11 +75,9 @@
         <input type="password" pattern="[A-Za-z0-9.!@#$%^&*]{8,}" required
                title="At least 8 characters" /> <br />
 
-        <button type="submit">Create an acount</button>
+        <button class="button" type="submit">Create an acount</button>
     </form>
 
-    <br />
-    <hr />
 
     <h3 style="text-align: center;"> Have an Account?</h3>
     <form action="/" id="LogInForn">
@@ -77,7 +90,7 @@
         <input type="password" pattern="[A-Za-z0-9.!@#$%^&*]{8,}" required
                title="At least 8 characters" /> <br />
 
-        <button type="submit">What are my tasks?</button>
+        <button class="button" type="submit">What are my tasks?</button>
     </form>
 </body>
 </html>
