@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <title>Home Page</title>
+    <style>
+        form {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            width: 100%;
+            margin-bottom: 1.5px;
+        }
+
+        input {
+            padding: 5px;
+            margin: 5px 0;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            font-size: 10px;
+            margin-bottom: 15px;
+        }
+
+        input:invalid {
+            border: 2px solid #D32F2F;
+        }
+
+        body {
+            background-image: url('imgs/userNaviBack.png'); /* Path to your image */
+            
+            background-size: cover; /* Make sure the image covers the entire page */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            height: 100vh; /* Ensure the body takes up the full height of the viewport */
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <h1 style="font-weight: bolder; text-align:center;"> To Start - Log In or Sign Up</h1>
+
+    <h3 style="text-align: center;" class=""> New Here?</h3>
+
+    <form action="/" id="SignUpForn">
+        <label for="name"> Full Name</label>
+        <input type="text" pattern="[a-zA-Z]{3,} [a-zA-Z]{3,}" required
+               title="Two names, 3 lettters for each at least" /> <br />
+
+        <label for="email">  Email  </label>
+        <input type="email" pattern="[a-z0-9]{3,}@[a-z]{2,}\.[a-z]{2,}" required
+               title="user@example.com" /> <br />
+
+        <label for="password" id="pass"> Enter Password </label>
+        <input type="password" pattern="[A-Za-z0-9.!@#$%^&*]{8,}" required
+               title="At least 8 characters" /> <br />
+
+        <button type="submit">Create an acount</button>
+    </form>
+
+    <br />
+    <hr />
+
+    <h3 style="text-align: center;"> Have an Account?</h3>
+    <form action="/" id="LogInForn">
+
+        <label for="email">  Email  </label>
+        <input type="email" pattern="[a-z0-9]{3,}@[a-z]{2,}\.[a-z]{2,}" required
+               title="user@example.com" /> <br />
+
+        <label for="password"> Enter Password </label>
+        <input type="password" pattern="[A-Za-z0-9.!@#$%^&*]{8,}" required
+               title="At least 8 characters" /> <br />
+
+        <button type="submit">What are my tasks?</button>
+    </form>
+</body>
+</html>
