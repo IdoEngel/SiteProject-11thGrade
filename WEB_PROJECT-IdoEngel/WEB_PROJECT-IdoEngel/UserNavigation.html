@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta charset="utf-8" />
-
     <title>Log In Page</title>
     <style>
         form {
@@ -30,9 +29,7 @@
 
         body {
             background-image: url('imgs/backgroundImage.png'); /* Path to your image */
-            
             text-align: center;
-            color: black;
             background-size: cover; /* Make sure the image covers the entire page */
             background-position: center; /* Center the image */
             background-repeat: no-repeat; /* Prevent the image from repeating */
@@ -69,7 +66,7 @@
 
         @keyframes flowUp {
             0% {
-                bottom: -50px; /* Start at the bottom of the screen */
+                bottom: -78px; /* Start at the bottom of the screen */
             }
 
             100% {
@@ -86,18 +83,18 @@
     <p>To use our website - you need to create an acount or log in to an existing one</p>
     <h3 style="text-align: center;" class=""> New Here?</h3>
 
-    <form action="Home.html" id="SignUpForn">
+    <form action="Home.html" method="get" id="SignUpForn">
         <label for="name"> Full Name</label>
         <input type="text" pattern="[a-zA-Z]{3,} [a-zA-Z]{3,}" required
-               title="Two names, 3 lettters for each at least" /> <br />
+               title="Two names, 3 lettters for each at least" placeholder="What should we call you?"/> <br />
 
         <label for="email">  Email  </label>
         <input type="email" pattern="[a-z0-9]{3,}@[a-z]{2,}\.[a-z]{2,}" required
-               title="user@example.com" /> <br />
+               title="user@example.com" placeholder="How should we contact you?"/> <br />
 
         <label for="password" id="pass"> Enter Password </label>
         <input type="password" pattern="[A-Za-z0-9.!@#$%^&*]{8,}" required
-               title="At least 8 characters" /> <br />
+               title="At least 8 characters" id="password" placeholder="A password you'll remember"/> <br />
 
         <button class="button" type="submit">Create an acount</button>
     </form>
@@ -105,15 +102,15 @@
 
 
     <h3 style="text-align: center;"> Have an Account?</h3>
-    <form action="Home.html" id="LogInForn">
+    <form action="Home.html" method="get" id="LogInForn">
 
         <label for="email">  Email  </label>
-        <input type="email" pattern="[a-z0-9]{3,}@[a-z]{2,}\.[a-z]{2,}" required
-               title="user@example.com" /> <br />
+        <input name="email" type="email" pattern="[a-z0-9]{3,}@[a-z]{2,}\.[a-z]{2,}" required
+               title="user@example.com" placeholder="What is your email?"/> <br />
 
         <label for="password"> Enter Password </label>
-        <input type="password" pattern="[A-Za-z0-9.!@#$%^&*]{8,}" required
-               title="At least 8 characters" /> <br />
+        <input name="password" type="password" pattern="[A-Za-z0-9.!@#$%^&*]{8,}" required
+               title="At least 8 characters" id="password" placeholder="Enter your password"/> <br />
 
         <button class="button" type="submit">What are my tasks?</button>
     </form>
@@ -124,17 +121,24 @@
     const numberOfImages = 7; // Number of images to create
 
     for (let i = 0; i < numberOfImages; i++) {
-      const img = document.createElement("img");
-      img.src = imageSources[Math.floor(Math.random() * imageSources.length)]; // Random image source
-      img.className = "image-container";
+        const img = document.createElement("img");
+        const img2 = document.createElement("img");
 
-      // Set random horizontal position and animation delay
-      img.style.left = Math.random() * 90 + "%"; // Random position between 0% and 90%
-      img.style.animationDelay = Math.random() * 5 + "s"; // Random delay between 0s and 5s
-      img.style.animationDuration = Math.random() * 3 + 4 + "s"; // Random speed between 4s and 7s
+        img.src = imageSources[Math.floor(Math.random() * imageSources.length)]; // Random image source
+        img.className = "image-container";
 
-      document.body.appendChild(img);
-    }</script>
+        img2.src = imageSources[Math.floor(Math.random() * imageSources.length)]; // Random image source
+        img2.className = "image-container";
+
+        // Set random horizontal position and animation delay
+        img.style.left = Math.random() * 90 + "%"; // Random position between 0% and 90%
+        img.style.animationDelay = Math.random() * 8 + "s"; // Random delay between 0s and 8s
+        img.style.animationDuration = Math.random() * 3 + 4 + "s"; // Random speed between 4s and 7s
+
+        document.body.appendChild(img);
+        }
+
+    </script>
 
 </body>
 </html>
