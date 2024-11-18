@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Consts.master.cs" Inherits="WEB_PROJECT_IdoEngel.Consts" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>ToDi</title>
+    <link href="MainStyle.css" rel="stylesheet" />
+    <script src="Actions.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="imgs/pageIcon.png">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+</head>
+<body>
+        <div class="topnav">
+        <a href="Home.aspx">All tasks (Home)</a>
+        <a href="#">In this...</a>
+        <a href="#">With others</a>
+        <a href="#">My data</a>
+        <a href="#">Add tasks</a>
+        <a href="#">Add a friend</a>
+        <a href="UserNavigation.html" id="LogOut">Log out</a>
+        <a href="AboutUs.aspx">About us</a>
+
+    </div>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</body>
+</html>
