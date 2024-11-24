@@ -22,7 +22,7 @@
         <a href="#">Add a friend</a>
         <a href="UserNavigation.html" id="LogOut">Log out</a>
         <a href="AboutUs.aspx">About us</a>
-
+        <a href="#" id="MyAccount">Hey, you</a>
     </div>
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
