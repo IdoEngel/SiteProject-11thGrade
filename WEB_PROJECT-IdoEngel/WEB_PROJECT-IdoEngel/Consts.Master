@@ -6,8 +6,10 @@
 <head runat="server">
     <title>ToDi</title>
     <link href="MainStyle.css" rel="stylesheet" />
+    <link href="ModalStyle.css" rel="stylesheet" />
     <script src="Actions.js" defer></script>
     <link rel="icon" type="image/x-icon" href="imgs/pageIcon.png">
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     
@@ -15,18 +17,24 @@
 <body>
         <div class="topnav">
         <a href="Home.aspx">All tasks (Home)</a>
-        <a href="#">In this...</a>
-        <a href="#">With others</a>
-        <a href="#">My data</a>
-        <a href="#">Add tasks</a>
-        <a href="#">Add a friend</a>
-        <a href="UserNavigation.html" id="LogOut">Log out</a>
+        <a href="MostImportant.aspx">Most Important</a>
+        <a href="AddTask.aspx">Add tasks</a>
+        <a href="UserNav.aspx" id="LogOut">Log out</a>
         <a href="AboutUs.aspx">About us</a>
-        <a href="#" id="MyAccount">Hey, you</a>
+        <button onclick="openModal()" id="btn_myAccount">
+            Hey, <%=Session["name"] %>
+        </button>
+
+
     </div>
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </div>
+
+            <div id="Modal" class="modal"> <!-- Modal -->
+          <span class="close-btn" onclick="document.getElementById('Modal').style.display = 'none';">&times;</span>
+            kjfdbgkjdfbgkdjfbgkjdzfbgjkdb
+        </div>
 </body>
 </html>

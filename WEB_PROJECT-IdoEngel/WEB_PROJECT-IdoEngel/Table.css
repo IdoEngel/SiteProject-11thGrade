@@ -1,0 +1,140 @@
+﻿:root {
+    --font-stack: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --header-bg: rgba(255, 255, 255, 0.8);
+    --header-color: #333;
+    --row-even-bg: rgba(255, 255, 255, 0.5);
+    --row-hover-bg: rgba(255, 255, 255, 0.75);
+    --border-color: #ccc;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --primary-color: #333;
+    --primary-hover: #555;
+    --input-bg: #fff;
+    --input-border: #ccc;
+    --input-focus-border: #333;
+    --transition-speed: 0.3s;
+}
+
+/* עטיפה לטבלה */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+/* טבלה */
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-stack);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: rgba(255, 255, 255, 0.6);
+    overflow: hidden;
+}
+
+    .dataTable th {
+        background-color: var(--header-bg);
+        color: var(--header-color);
+        padding: 12px 15px;
+        text-align: left;
+        font-size: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        font-weight: 600;
+    }
+
+    .dataTable td {
+        padding: 12px 15px;
+        border-bottom: 1px solid var(--border-color);
+        font-size: 0.95rem;
+        color: #333;
+    }
+
+    .dataTable tr:nth-child(even) td {
+        background-color: var(--row-even-bg);
+    }
+
+    .dataTable tr:hover td {
+        background-color: var(--row-hover-bg);
+        transition: background-color var(--transition-speed);
+    }
+
+/* רספונסיבי */
+@media (max-width: 600px) {
+    .dataTable, .dataTable thead, .dataTable tbody,
+    .dataTable th, .dataTable td, .dataTable tr {
+        display: block;
+    }
+
+        .dataTable tr {
+            margin-bottom: 15px;
+        }
+
+        .dataTable td {
+            position: relative;
+            padding-left: 50%;
+            text-align: left;
+        }
+
+            .dataTable td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 15px;
+                font-weight: bold;
+            }
+
+        .dataTable th {
+            display: none;
+        }
+}
+
+/* שדה קלט + כפתור מעל הטבלה */
+.btn-container {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.delField {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: var(--input-bg);
+    border: 2px solid var(--input-border);
+    border-radius: var(--border-radius);
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+    font-family: var(--font-stack);
+    max-width: 300px;
+}
+
+    .delField:focus {
+        outline: none;
+        border-color: var(--input-focus-border);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    }
+
+.delBtn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f2f2f2;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    font-family: var(--font-stack);
+}
+
+    .delBtn:hover {
+        background-color: var(--primary-hover);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .delBtn:active {
+        transform: translateY(1px);
+    }

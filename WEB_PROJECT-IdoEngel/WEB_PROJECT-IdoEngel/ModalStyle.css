@@ -1,0 +1,14 @@
+﻿.modal {
+    display: none; /* מתחיל מוסתר */
+    opacity: 0;
+    transform: scale(0.95); /* קצת קטן יותר */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    block-size: 200px;
+}
+
+    .modal.show {
+        display: block;
+        opacity: 1;
+        transform: scale(1); /* חוזר לגודל מלא */
+        z-index: 2;
+    }

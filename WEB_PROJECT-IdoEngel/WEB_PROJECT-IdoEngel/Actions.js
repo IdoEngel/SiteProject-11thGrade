@@ -22,9 +22,8 @@ for (let i = 0; i < AboutUs.length; i++) { // LOOP REQURED
  * @param {any} event - click accured
  */
 function askToLogOut(event) {
-    console.log("Hellll");
     const msg = "Are you sure you want to log out?";
-    const URL = "UserNavigation.html";
+    const URL = "LogOut.aspx";
 
     event.preventDefault();
 
@@ -38,6 +37,7 @@ function askToLogOut(event) {
  * @param {any} th - this (curr item from the loop)
  */
 function unfoldAboutUs(th) {
+
     th.classList.toggle("active");
     var panel = th.nextElementSibling;
     if (panel.style.maxHeight) {
@@ -45,4 +45,10 @@ function unfoldAboutUs(th) {
     } else {
         panel.style.maxHeight = panel.scrollHeight + "px";
     }
+}
+
+const modalBtn = document.getElementById("btn_myAccount");
+modalBtn.onclick = function () {
+    let = v = document.getElementById('Modal');
+    v.style.display = 'block';
 }
